@@ -1,0 +1,18 @@
+@(customer: Form[CustomerForm])(implicit request: MessagesRequestHeader)
+@import helper._
+
+  @request.flash.get("success").map{ key =>
+    @request.messages(key)
+  }
+
+@main("Welcome to Play") {
+  @form(routes.CustomerController.addCustomerData){
+    @inputText(customer("name"))
+    @inputText(customer("age"))
+    @CSRF.formField
+
+    <div class="button">
+      <input type="submit" value="Add Customer">
+    </div>
+  }
+}

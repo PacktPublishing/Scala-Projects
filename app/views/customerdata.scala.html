@@ -1,0 +1,26 @@
+@(customers: Seq[models.Customer])
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Customer Details</title>
+    </head>
+    <body>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>name</th>
+                        <th>age</th>
+                    </tr>
+                </thead>
+                @for(customer <- customers) {
+                    <tr>
+                        <td>@customer.name</td>
+                        <td>@customer.age</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</html>
