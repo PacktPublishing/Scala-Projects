@@ -1,0 +1,32 @@
+@(products: List[models.Product])
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ProductListingApp</title>
+    </head>
+    <body class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>productId</th>
+                    <th>productType</th>
+                    <th>colour</th>
+                    <th>availability</th>
+                    <th>size</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(product <- products) {
+                <tr>
+                    <td>@product.productId</td>
+                    <td>@product.productType</td>
+                    <td>@product.colour</td>
+                    <td>@product.availability</td>
+                    <td>@product.size</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </body>
+</html>
